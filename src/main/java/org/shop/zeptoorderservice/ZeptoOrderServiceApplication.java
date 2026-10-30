@@ -1,0 +1,13 @@
+package org.shop.zeptoorderservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ZeptoOrderServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ZeptoOrderServiceApplication.class, args);
+    }
+
+}
