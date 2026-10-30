@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  user-service:
+    image: user-service:1.0
+    ports: ["8081:8081"]
+    networks: [micro-net]
+
+  order-service:
+    image: order-service:1.0
+    ports: ["8082:8082"]
+    networks: [micro-net]
+
+  payment-service:
+    image: payment-service:1.0
+    ports: ["8083:8083"]
+    networks: [micro-net]
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: microdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports: ["3306:3306"]
+    networks: [micro-net]
+
+networks:
+  micro-net:
+    driver: bridge
